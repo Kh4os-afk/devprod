@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->string('contato');
             $table->date('dtinicio');
             $table->date('dtfinal');
-            $table->integer('qtfilial');
+            $table->string('qtfilial');
             $table->decimal('vlmensal');
             $table->timestamps();
         });
