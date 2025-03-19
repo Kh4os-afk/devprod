@@ -17,13 +17,13 @@ class IndexController extends Controller
 
     public function post(Request $request)
     {
-        try {
-            $validated = $request->validate([
-                'email' => 'required|email',
-                'name' => 'required',
-                'text' => 'required',
-            ]);
+        $validated = $request->validate([
+            'email' => 'required|email',
+            'name' => 'required',
+            'text' => 'required',
+        ]);
 
+        try {
             Mail::to('comercial@devprod.com.br')->send(new ContatoMail($validated['email'], $validated['name'], $validated['text']));
 
             Mail::to($validated['email'])->send(new ContatoRespostaMail($validated['name']));

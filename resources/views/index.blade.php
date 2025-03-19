@@ -721,17 +721,17 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="single_form">
-                                        <input name="name" type="text" placeholder="Nome">
+                                        <input name="name" type="text" placeholder="Nome" required>
                                     </div> <!-- single form -->
                                 </div>
                                 <div class="col-md-6">
                                     <div class="single_form">
-                                        <input name="email" type="email" placeholder="Email">
+                                        <input name="email" type="email" placeholder="Email" required>
                                     </div> <!-- single form -->
                                 </div>
                                 <div class="col-md-12">
                                     <div class="single_form">
-                                        <textarea name="text" placeholder="Mensagem"></textarea>
+                                        <textarea name="text" placeholder="Mensagem" required></textarea>
                                     </div> <!-- single form -->
                                 </div>
                                 <p class="form-message"></p>
