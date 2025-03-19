@@ -716,7 +716,8 @@
                     </div> <!-- section title -->
 
                     <div class="contact_form">
-                        <form id="contact-form" action="#/">
+                        <form id="contact-form" action="/email" method="post">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="single_form">
@@ -730,13 +731,13 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="single_form">
-                                        <textarea name="message" placeholder="Mensagem"></textarea>
+                                        <textarea name="text" placeholder="Mensagem"></textarea>
                                     </div> <!-- single form -->
                                 </div>
                                 <p class="form-message"></p>
                                 <div class="col-md-12">
                                     <div class="single_form">
-                                        <button class="main-btn">Enviar</button>
+                                        <button class="main-btn" type="submit">Enviar</button>
                                     </div> <!-- single form -->
                                 </div>
                             </div> <!-- row -->
@@ -861,6 +862,12 @@
 
 <!--====== Main js ======-->
 <script src="assets/js/main.js"></script>
+
+@session('success')
+<script>
+    alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
+</script>
+@endsession
 
 </body>
 

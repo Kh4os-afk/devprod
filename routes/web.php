@@ -2,4 +2,5 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'index');
+Route::get('/',[\App\Http\Controllers\IndexController::class,'index']);
+Route::post('/email',[\App\Http\Controllers\IndexController::class,'post']);
