@@ -231,7 +231,7 @@
 <section id="why" class="about_area pt-115 ">
     <div class="about_image d-flex align-items-end justify-content-end">
         <div class="image">
-            <img class="wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" src="assets/images/about.svg" alt="about">
+            <img class="wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" src="assets/images/about2.svg" alt="about">
         </div>
     </div> <!-- about image -->
     <div class="container">
@@ -442,7 +442,7 @@
                                 <div class="col-lg-4 col-md-7 col-sm-9">
                                     <div class="single_pricing text-center mt-30 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
                                         <div class="pricing_title">
-                                            <h4 class="title">Básico</h4>
+                                            <h4 class="title">Starter</h4>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="112" height="110" viewBox="0 0 112 110">
                                                 <path class="services_shape" id="Polygon_15" data-name="Polygon 15" d="M51.2,2.329a11,11,0,0,1,9.6,0L96.15,19.478a11,11,0,0,1,5.927,7.466l8.76,38.665a11,11,0,0,1-2.1,9.258l-24.508,30.96A11,11,0,0,1,75.6,110H36.4a11,11,0,0,1-8.625-4.173L3.266,74.867a11,11,0,0,1-2.1-9.258l8.76-38.665a11,11,0,0,1,5.927-7.466Z" fill="#f94f4f"/>
                                             </svg>
@@ -479,7 +479,7 @@
                                 <div class="col-lg-4 col-md-7 col-sm-9">
                                     <div class="single_pricing text-center mt-30 active wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="1s">
                                         <div class="pricing_title">
-                                            <h4 class="title">Padrão</h4>
+                                            <h4 class="title">Standard</h4>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="112" height="110" viewBox="0 0 112 110">
                                                 <path class="services_shape" id="Polygon_15" data-name="Polygon 15" d="M51.2,2.329a11,11,0,0,1,9.6,0L96.15,19.478a11,11,0,0,1,5.927,7.466l8.76,38.665a11,11,0,0,1-2.1,9.258l-24.508,30.96A11,11,0,0,1,75.6,110H36.4a11,11,0,0,1-8.625-4.173L3.266,74.867a11,11,0,0,1-2.1-9.258l8.76-38.665a11,11,0,0,1,5.927-7.466Z" fill="#f94f4f"/>
                                             </svg>
@@ -554,7 +554,7 @@
                                 <div class="col-lg-4 col-md-7 col-sm-9">
                                     <div class="single_pricing text-center mt-30">
                                         <div class="pricing_title">
-                                            <h4 class="title">Basic</h4>
+                                            <h4 class="title">Starter</h4>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="112" height="110" viewBox="0 0 112 110">
                                                 <path class="services_shape" id="Polygon_15" data-name="Polygon 15" d="M51.2,2.329a11,11,0,0,1,9.6,0L96.15,19.478a11,11,0,0,1,5.927,7.466l8.76,38.665a11,11,0,0,1-2.1,9.258l-24.508,30.96A11,11,0,0,1,75.6,110H36.4a11,11,0,0,1-8.625-4.173L3.266,74.867a11,11,0,0,1-2.1-9.258l8.76-38.665a11,11,0,0,1,5.927-7.466Z" fill="#f94f4f"/>
                                             </svg>
