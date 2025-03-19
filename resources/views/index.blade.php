@@ -471,7 +471,7 @@
                                                         <i class="lni lni-rocket" style="color: #F94F4F"></i> Conciliação Automatica
                                                     </p></li>
                                             </ul>
-                                            <a href="#/" class="main-btn">Escolher Plano</a>
+                                            <a href="#contact" class="main-btn">Escolher Plano</a>
                                         </div>
                                     </div>  <!-- single pricing -->
                                 </div>
@@ -507,7 +507,7 @@
                                                         <i class="lni lni-rocket" style="color: #F94F4F"></i> Conciliação Automatica
                                                     </p></li>
                                             </ul>
-                                            <a href="#/" class="main-btn">Escolher Plano</a>
+                                            <a href="#contact" class="main-btn">Escolher Plano</a>
                                         </div>
                                     </div>  <!-- single pricing -->
                                 </div>
@@ -543,7 +543,7 @@
                                                         <i class="lni lni-rocket" style="color: #F94F4F"></i> Conciliação Automatica
                                                     </p></li>
                                             </ul>
-                                            <a href="#/" class="main-btn">Escolher Plano</a>
+                                            <a href="#contact" class="main-btn">Escolher Plano</a>
                                         </div>
                                     </div>  <!-- single pricing -->
                                 </div>
