@@ -8,5 +8,3 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/licenca/{uuid}',[\App\Http\Controllers\LicencaController::class,'index'])->name('licenca.index');
-
-

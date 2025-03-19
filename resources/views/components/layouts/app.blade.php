@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <title>{{ $title ?? 'Page Title' }}</title>
+    <title>{{ $title ?? 'Devprod Solution' }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{ asset('imagens/blackWink.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('imagens/logo_preta.png') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet"/>
     @vite('resources/css/app.css')
@@ -14,8 +14,8 @@
 <flux:header container class="bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700">
     <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left"/>
 
-    <flux:brand href="/" logo="{{ asset('imagens/blackWink.png') }}" name="Devprod" class="max-lg:hidden dark:hidden"/>
-    <flux:brand href="/" logo="{{ asset('imagens/whiteWink.png') }}" name="Devprod" class="max-lg:!hidden hidden dark:flex"/>
+    <flux:brand href="/" logo="{{ asset('imagens/logo_preta.png') }}" name="Devprod" class="max-lg:hidden dark:hidden"/>
+    <flux:brand href="/" logo="{{ asset('imagens/logo_branco.png') }}" name="Devprod" class="max-lg:!hidden hidden dark:flex"/>
 
     <flux:navbar class="-mb-px max-lg:hidden">
         <flux:navbar.item href="#" current>Início</flux:navbar.item>
