@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -32,8 +32,8 @@
 
 <body>
 <!--[if IE]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please
-    <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<p class="browserupgrade">Você está utilizando um navegador <strong>desatualizado</strong>. Por favor,
+    <a href="https://browsehappy.com/">atualize seu navegado</a> para melhorar sua experiência e segurança.</p>
 <![endif]-->
 
 <!--====== PRELOADER PART START ======-->
@@ -65,7 +65,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="/">
                             <img src="assets/devprod/cinza_h.png" alt="Devprod Logo" height="51">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -112,9 +112,9 @@
         <div class="hero_shape shape_3">
             <img src="assets/images/shape/shape-3.svg" alt="shape">
         </div><!-- hero shape -->
-        <div class="hero_shape shape_4">
+        {{--<div class="hero_shape shape_4">
             <img src="assets/images/shape/shape-4.svg" alt="shape">
-        </div><!-- hero shape -->
+        </div><!-- hero shape -->--}}
         <div class="hero_shape shape_6">
             <img src="assets/images/shape/shape-1.svg" alt="shape">
         </div><!-- hero shape -->
@@ -187,7 +187,7 @@
                         </svg>
                     </div>
                     <div class="services_content">
-                        <h3 class="services_title"><a href="#">Importar</a></h3>
+                        <h3 class="services_title"><a href="#/">Importar</a></h3>
                         <p>Importe os arquivos de vendas do SitefGW ou Shipay para posterior processamento.</p>
                     </div>
                 </div> <!-- single services -->
@@ -201,7 +201,7 @@
                         </svg>
                     </div>
                     <div class="services_content">
-                        <h3 class="services_title"><a href="#">Aprender</a></h3>
+                        <h3 class="services_title"><a href="#/">Aprender</a></h3>
                         <p>Configure o sistema para identificar e classificar automaticamente as cobranças.</p>
                     </div>
                 </div> <!-- single services -->
@@ -215,7 +215,7 @@
                         </svg>
                     </div>
                     <div class="services_content">
-                        <h3 class="services_title"><a href="#">Desdobrar</a></h3>
+                        <h3 class="services_title"><a href="#/">Desdobrar</a></h3>
                         <p>Desdobre as prestações, conforme as correspondências previamente estabelecidas.</p>
                     </div>
                 </div> <!-- single services -->
@@ -300,7 +300,7 @@
                         </svg>
                     </div>
                     <div class="services_content">
-                        <h3 class="services_title"><a href="#">Importação SitefGW</a></h3>
+                        <h3 class="services_title"><a href="#/">Importação SitefGW</a></h3>
                         <p>Importe os arquivos de transações extraídos do SitefGW, categorizando as transações com conciliação automática.</p>
                     </div>
                 </div> <!-- single services -->
@@ -316,7 +316,7 @@
                         </svg>
                     </div>
                     <div class="services_content">
-                        <h3 class="services_title"><a href="#">Validação de Sangrias</a></h3>
+                        <h3 class="services_title"><a href="#/">Validação de Sangrias</a></h3>
                         <p>Realize a validação automatizada das sangrias, comparando os totais do caixa e sinalizando discrepâncias para ajustes.</p>
                     </div>
                 </div> <!-- single services -->
@@ -332,7 +332,7 @@
                         </svg>
                     </div>
                     <div class="services_content">
-                        <h3 class="services_title"><a href="#">Edição de Cobranças</a></h3>
+                        <h3 class="services_title"><a href="#/">Edição de Cobranças</a></h3>
                         <p>Mapeie as informações dos cartões e realize o desdobramento correto das cobranças registradas no ERP WinThor.</p>
                     </div>
                 </div> <!-- single services -->
@@ -348,7 +348,7 @@
                         </svg>
                     </div>
                     <div class="services_content">
-                        <h3 class="services_title"><a href="#">Importação Shipay</a></h3>
+                        <h3 class="services_title"><a href="#/">Importação Shipay</a></h3>
                         <p>Importe arquivos XLSX da Shipay, categorizando as transações com conciliação automática.</p>
                     </div>
                 </div> <!-- single services -->
@@ -364,7 +364,7 @@
                         </svg>
                     </div>
                     <div class="services_content">
-                        <h3 class="services_title"><a href="#">Suporte</a></h3>
+                        <h3 class="services_title"><a href="#/">Suporte</a></h3>
                         <p>Conte com suporte especializado e atualizações remotas para garantir a continuidade e segurança do sistema.</p>
                     </div>
                 </div> <!-- single services -->
@@ -380,7 +380,7 @@
                         </svg>
                     </div>
                     <div class="services_content">
-                        <h3 class="services_title"><a href="#">Gestão Financeira</a></h3>
+                        <h3 class="services_title"><a href="#/">Gestão Financeira</a></h3>
                         <p>Otimize seus processos financeiros com conciliação automática e gestão precisa das transações.</p>
                     </div>
                 </div> <!-- single services -->
@@ -394,7 +394,7 @@
 
 <!--====== WORK PART START ======-->
 
-<!--<section id="work" class="work_area pt-115 pb-120">
+{{--<section id="work" class="work_area pt-115 pb-120">
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-lg-9">
@@ -406,7 +406,7 @@
             </div>
         </div> &lt;!&ndash; row &ndash;&gt;
     </div> &lt;!&ndash; container &ndash;&gt;
-</section>-->
+</section>--}}
 
 <!--====== WORK PART ENDS ======-->
 
@@ -471,7 +471,7 @@
                                                         <i class="lni lni-rocket" style="color: #F94F4F"></i> Conciliação Automatica
                                                     </p></li>
                                             </ul>
-                                            <a href="#" class="main-btn">Escolher Plano</a>
+                                            <a href="#/" class="main-btn">Escolher Plano</a>
                                         </div>
                                     </div>  <!-- single pricing -->
                                 </div>
@@ -507,7 +507,7 @@
                                                         <i class="lni lni-rocket" style="color: #F94F4F"></i> Conciliação Automatica
                                                     </p></li>
                                             </ul>
-                                            <a href="#" class="main-btn">Escolher Plano</a>
+                                            <a href="#/" class="main-btn">Escolher Plano</a>
                                         </div>
                                     </div>  <!-- single pricing -->
                                 </div>
@@ -543,7 +543,7 @@
                                                         <i class="lni lni-rocket" style="color: #F94F4F"></i> Conciliação Automatica
                                                     </p></li>
                                             </ul>
-                                            <a href="#" class="main-btn">Escolher Plano</a>
+                                            <a href="#/" class="main-btn">Escolher Plano</a>
                                         </div>
                                     </div>  <!-- single pricing -->
                                 </div>
@@ -562,7 +562,7 @@
                                         <div class="pricing_content">
                                             <span class="pricing_price">$99.00</span>
                                             <p>Lorem ipsum dolor sit am consetetur sadi aliquyam erat sed diam voluptua vero eos accusam et justo duo dolores </p>
-                                            <a href="" class="main-btn">Choose Plan</a>
+                                            <a href="#/" class="main-btn">Choose Plan</a>
                                         </div>
                                     </div>  <!-- single pricing -->
                                 </div>
@@ -578,7 +578,7 @@
                                         <div class="pricing_content">
                                             <span class="pricing_price">$199.00</span>
                                             <p>Lorem ipsum dolor sit am consetetur sadi aliquyam erat sed diam voluptua vero eos accusam et justo duo dolores </p>
-                                            <a href="" class="main-btn">Choose Plan</a>
+                                            <a href="#/" class="main-btn">Choose Plan</a>
                                         </div>
                                     </div>  <!-- single pricing -->
                                 </div>
@@ -594,7 +594,7 @@
                                         <div class="pricing_content">
                                             <span class="pricing_price">$499.00</span>
                                             <p>Lorem ipsum dolor sit am consetetur sadi aliquyam erat sed diam voluptua vero eos accusam et justo duo dolores </p>
-                                            <a href="" class="main-btn">Choose Plan</a>
+                                            <a href="#/" class="main-btn">Choose Plan</a>
                                         </div>
                                     </div>  <!-- single pricing -->
                                 </div>
@@ -611,7 +611,7 @@
 
 <!--====== TEAM PART START ======-->
 
-<!--<section id="team" class="team_area pt-115 pb-120">
+{{--<section id="team" class="team_area pt-115 pb-120">
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-lg-9">
@@ -623,7 +623,7 @@
             </div>
         </div> &lt;!&ndash; row &ndash;&gt;
     </div> &lt;!&ndash; container &ndash;&gt;
-</section>-->
+</section>--}}
 
 <!--====== TEAM PART ENDS ======-->
 
@@ -647,13 +647,13 @@
                     </div>
                     <div class="blog_content">
                         <ul class="blog_meta d-flex justify-content-between">
-                            <li><a href="#">Devprod Sentinela</a></li>
+                            <li><a href="#/">Devprod Sentinela</a></li>
                             <li>15 Mar 2024</li>
                         </ul>
                         <h3 class="blog_title">
-                            <a href="#">Monitore, audite e otimize seu sistema diariamente com precisão e eficiência</a>
+                            <a href="#/">Monitore, audite e otimize seu sistema diariamente com precisão e eficiência</a>
                         </h3>
-                        <a href="#" class="more">Ler Mais</a>
+                        <a href="#/" class="more">Ler Mais</a>
                     </div>
                 </div> <!-- row -->
             </div>
@@ -664,13 +664,13 @@
                     </div>
                     <div class="blog_content">
                         <ul class="blog_meta d-flex justify-content-between">
-                            <li><a href="#">Devprod Conciliador</a></li>
+                            <li><a href="#/">Devprod Conciliador</a></li>
                             <li>10 Nov 2024</li>
                         </ul>
                         <h3 class="blog_title">
-                            <a href="#"> Simplifique a conciliação de transações em minutos com precisão e eficiência</a>
+                            <a href="#/"> Simplifique a conciliação de transações em minutos com precisão e eficiência</a>
                         </h3>
-                        <a href="#" class="more">Ler Mais</a>
+                        <a href="#/" class="more">Ler Mais</a>
                     </div>
                 </div> <!-- row -->
             </div>
@@ -681,12 +681,12 @@
                     </div>
                     <div class="blog_content">
                         <ul class="blog_meta d-flex justify-content-between">
-                            <li><a href="#">Devprod Produção</a></li>
+                            <li><a href="#/">Devprod Produção</a></li>
                             <li>15 Fev 2025</li>
                         </ul>
                         <h3 class="blog_title">
-                            <a href="#">Flexibilidade nas produções, otimizando o uso de matéria-prima</a></h3>
-                        <a href="#" class="more">Ler Mais</a>
+                            <a href="#/">Flexibilidade nas produções, otimizando o uso de matéria-prima</a></h3>
+                        <a href="#/" class="more">Ler Mais</a>
                     </div>
                 </div> <!-- row -->
             </div>
@@ -716,7 +716,7 @@
                     </div> <!-- section title -->
 
                     <div class="contact_form">
-                        <form id="contact-form" action="assets/contact.php">
+                        <form id="contact-form" action="#/">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="single_form">
@@ -771,17 +771,17 @@
                         <div class="footer_link mt-50">
                             <h2 class="footer_title">Links rápidos</h2>
                             <ul class="link">
-                                <li><a href="#">Empresa</a></li>
-                                <li><a href="#">Política de privacidade</a></li>
-                                <li><a href="#">Sobre</a></li>
+                                <li><a href="#/">Empresa</a></li>
+                                <li><a href="#/">Política de privacidade</a></li>
+                                <li><a href="#/">Sobre</a></li>
                             </ul>
                         </div> &lt;!&ndash; footer link &ndash;&gt;
                         <div class="footer_link mt-50">
                             <h2 class="footer_title">Recursos</h2>
                             <ul class="link">
-                                <li><a href="#">Suporte</a></li>
-                                <li><a href="#">Suporte</a></li>
-                                <li><a href="#">Termos</a></li>
+                                <li><a href="#/">Suporte</a></li>
+                                <li><a href="#/">Suporte</a></li>
+                                <li><a href="#/">Termos</a></li>
                             </ul>
                         </div> &lt;!&ndash; footer link &ndash;&gt;
                     </div>--> <!-- footer link wrapper -->
@@ -790,7 +790,7 @@
                     <div class="footer_subscribe mt-50">
                         <h2 class="footer_title">Newsletter</h2>
                         <div class="subscribe_form text-right">
-                            <form action="#">
+                            <form action="#/">
                                 <input type="text" placeholder="Digite o email">
                                 <button class="main-btn">Inscrever-se</button>
                             </form>
@@ -802,17 +802,17 @@
         <div class="footer_copyright d-sm-flex justify-content-between">
             <div class="footer_social text-center">
                 <ul class="social">
-                    <li><a href="#"><i class="lni lni-facebook-filled" target="_blank"></i></a></li>
-                    <li><a href="#"><i class="lni lni-twitter-filled" target="_blank"></i></a></li>
+                    <li><a href="#/"><i class="lni lni-facebook-filled" target="_blank"></i></a></li>
+                    <li><a href="#/"><i class="lni lni-twitter-filled" target="_blank"></i></a></li>
                     <li>
                         <a href="https://www.instagram.com/devprodsolutions/" target="_blank"><i class="lni lni-instagram-original"></i></a>
                     </li>
-                    <li><a href="#"><i class="lni lni-linkedin-original" target="_blank"></i></a></li>
+                    <li><a href="#/"><i class="lni lni-linkedin-original" target="_blank"></i></a></li>
                 </ul>
             </div> <!-- footer social -->
             <div class="footer_copyright_content text-center">
                 <p>
-                    <a href="mailto:comercial@devprod.com.br" rel="nofollow" style="color: white">comercial@devprod.com.br</a>
+                    <a href="mailto:comercial@devprod.com.br" target="_blank" rel="nofollow" style="color: white">comercial@devprod.com.br</a>
                 </p>
             </div> <!-- footer copyright content -->
         </div> <!-- footer copyright -->
