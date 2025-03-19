@@ -701,7 +701,7 @@
 <section id="contact" class="contact_area pt-70 pb-120">
     <div class="contact_image d-flex align-items-center justify-content-end">
         <div class="image">
-            <img class="wow fadeInLeftBig" data-wow-duration="2s" data-wow-delay="0.4s" src="assets/images/contact.svg" alt="about">
+            <img class="wow fadeInLeftBig" data-wow-duration="2s" data-wow-delay="0.4s" src="assets/images/contact2.svg" alt="about">
         </div>
     </div> <!-- about image -->
 
