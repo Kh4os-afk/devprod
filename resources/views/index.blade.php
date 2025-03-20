@@ -28,6 +28,8 @@
     <!--====== Style CSS ======-->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!--====== Image Modal CSS ======-->
+    <link rel="stylesheet" href="assets/css/image-modal.css">
 </head>
 
 <body>
@@ -56,6 +58,16 @@
 </div>
 
 <!--====== PRELOADER PART ENDS ======-->
+
+<!--====== MODAL IMAGE PART START ======-->
+
+<div id="myModal" class="modal">
+    <span class="close">×</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+<!--====== MODAL IMAGE PART ENDS ======-->
 
 <!--====== HEADER PART START ======-->
 
@@ -157,7 +169,7 @@
         <div class="header_image d-flex align-items-center">
             <div class="image">
                 <!--<img class="wow fadeInRightBig" data-wow-duration="2s" data-wow-delay="1.6s" src="assets/images/header-image.svg" alt="Header Image">-->
-                <img class="wow fadeInRightBig" data-wow-duration="2s" data-wow-delay="1.6s" src="assets/devprod/devprod_dashboard_branco.png" alt="Devprod Dashboard" style="padding-right: 20px; border-radius: 10px;">
+                <img id="myImg1" class="wow fadeInRightBig myImgClass" data-wow-duration="2s" data-wow-delay="1.6s" src="assets/devprod/devprod_dashboard_branco.png" alt="Devprod Dashboard" style="padding-right: 20px; border-radius: 10px;">
             </div>
         </div> <!-- header image -->
     </div> <!-- header hero -->
@@ -643,7 +655,7 @@
             <div class="col-lg-4 col-md-7">
                 <div class="single_blog mt-30 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.3s">
                     <div class="blog_image">
-                        <img src="assets/devprod/sentinela_dashboard.png" alt="blog">
+                        <img id="myImg2" class="myImgClass" src="assets/devprod/sentinela_dashboard.png" alt="Devprod Sentinela">
                     </div>
                     <div class="blog_content">
                         <ul class="blog_meta d-flex justify-content-between">
@@ -660,7 +672,7 @@
             <div class="col-lg-4 col-md-7">
                 <div class="single_blog mt-30 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.6s">
                     <div class="blog_image">
-                        <img src="assets/devprod/devprod_dashboard_preto.png" alt="blog">
+                        <img id="myImg3" class="myImgClass" src="assets/devprod/devprod_dashboard_preto.png" alt="Devprod Conciliador">
                     </div>
                     <div class="blog_content">
                         <ul class="blog_meta d-flex justify-content-between">
@@ -677,7 +689,7 @@
             <div class="col-lg-4 col-md-7">
                 <div class="single_blog mt-30 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.9s">
                     <div class="blog_image">
-                        <img src="assets/devprod/producao_dashboard_preto.png" alt="blog">
+                        <img id="myImg4" class="myImgClass" src="assets/devprod/producao_dashboard_preto.png" alt="Devprod Produção">
                     </div>
                     <div class="blog_content">
                         <ul class="blog_meta d-flex justify-content-between">
@@ -868,6 +880,29 @@
     alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
 </script>
 @endsession
+
+<script>
+    var modal = document.getElementById('myModal');
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+
+    var images = document.querySelectorAll('[id^="myImg"]');
+
+    images.forEach(function(img) {
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+            captionText.innerHTML = this.alt;
+        };
+    });
+
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    };
+</script>
 
 </body>
 
