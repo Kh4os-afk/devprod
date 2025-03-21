@@ -7,7 +7,7 @@
     <!--====== Title ======-->
     <title>Devprod Solutions</title>
 
-    <meta name="description" content="">
+    <meta name="description" content="Projetar, construir e entregar mais rápido do que nunca.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--====== Favicon Icon ======-->
