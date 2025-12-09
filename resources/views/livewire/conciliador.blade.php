@@ -16,7 +16,7 @@
     </flux:card>
 
     <div class="grid grid-cols-12 gap-4">
-        <flux:card class="col-span-4 !bg-transparent !border-transparent">
+        <flux:card class="col-span-4 bg-transparent! border-transparent!">
             <flux:heading size="lg">Processo Automatizado</flux:heading>
             <flux:subheading class="text-justify" size="md">
                 A aplicação do Devprod Conciliador é uma solução voltada para automação dos processos no setor financeiro, oferecendo funcionalidades abrangentes para otimizar as operações de desdobramento e conciliação com segurança e eficiência.

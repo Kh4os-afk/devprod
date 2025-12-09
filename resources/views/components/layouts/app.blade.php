@@ -8,14 +8,14 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet"/>
     @vite('resources/css/app.css')
-    @fluxStyles
+    @fluxAppearance
 </head>
 <body class="min-h-screen bg-white dark:bg-zinc-800">
 <flux:header container class="bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700">
     <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left"/>
 
     <flux:brand href="/" logo="{{ asset('imagens/logo_preta.png') }}" name="Devprod" class="max-lg:hidden dark:hidden"/>
-    <flux:brand href="/" logo="{{ asset('imagens/logo_branco.png') }}" name="Devprod" class="max-lg:!hidden hidden dark:flex"/>
+    <flux:brand href="/" logo="{{ asset('imagens/logo_branco.png') }}" name="Devprod" class="max-lg:hidden! hidden dark:flex"/>
 
     <flux:navbar class="-mb-px max-lg:hidden">
         <flux:navbar.item href="#" current>Início</flux:navbar.item>

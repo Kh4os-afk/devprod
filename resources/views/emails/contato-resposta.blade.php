@@ -292,7 +292,7 @@
                      class="devprod-logo"
                      alt="Devprod Logo"
                      draggable="false"
-                     style="-ms-interpolation-mode: bicubic; max-width: 100%; /*width: 136px !important;*/ outline: none; text-decoration: none; height: 41px !important; border-style: none;">
+                     style="-ms-interpolation-mode: bicubic; max-width: 100%; /*width: 136px !important;*/ outline-solid: none; text-decoration: none; height: 41px !important; border-style: none;">
 
                 <table style="width: 580px; -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; mso-table-lspace: 0; mso-table-rspace: 0; border-collapse: separate; border-spacing: 0; table-layout: auto; border-radius: 8px; margin-top: 24px; padding: 0; border: 1px solid #eee;"
                        class="email-body"
