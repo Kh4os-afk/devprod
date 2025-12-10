@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Cache;
 use App\Models\DvpAuditoria;
+use Illuminate\Support\Str;
 
 class SyncGtinCommand extends Command
 {
@@ -15,7 +16,6 @@ class SyncGtinCommand extends Command
 
     public function handle()
     {
-        // Lock para rodar bem no cron (1 em 1 minuto)
         $lock = Cache::lock('sync-gtin-lock', 600);
 
         if (!$lock->get()) {
@@ -35,7 +35,7 @@ class SyncGtinCommand extends Command
                 $q->whereNull('data_eauditoria')
                     ->orWhere('data_eauditoria', '<=', now()->subDays(7));
             })
-                ->orderBy('codbarras')
+                ->whereNull('erro_eauditoria')
                 ->limit(1000)
                 ->get();
 
@@ -58,7 +58,7 @@ class SyncGtinCommand extends Command
             // ---------------------------------------------
             // 🔥 CONSULTA API IMENDES
             // ---------------------------------------------
-            $response = Http::timeout(600)
+            $response = Http::timeout(300)
                 ->withHeaders([
                     'accept' => 'application/json, text/plain, */*',
                     'content-type' => 'application/json',
@@ -108,17 +108,25 @@ class SyncGtinCommand extends Command
             foreach ($data['products'] as $produto) {
 
                 $ean = $produto['codBarras'] ?? null;
-                if (!$ean) continue;
-                // remove zeros à esquerda
+
+                if (!$ean) {
+                    Log::warning("⚠️ Produto sem GTIN na resposta da API.");
+                    continue;
+                }
+
                 $ean = ltrim($ean, '0');
 
-                $linha = DvpAuditoria::where('codbarras', $ean)->first();
-                if (!$linha) continue;
+                $linha = DvpAuditoria::whereRaw("TRIM(LEADING '0' FROM codbarras) = ?", [$ean])->first();
+
+                if (!$linha) {
+                    Log::warning("⚠️ GTIN {$ean} não encontrado na base local.");
+                    continue;
+                }
 
                 try {
                     $linha->update([
                         // ⚠️ TODOS OS CAMPOS DO SEU INSERT ORIGINAL ESTÃO AQUI
-                        'codbarras' => $produto['codBarras'] ?? null,
+                        'codbarras' => $ean ?? null,
                         'descricao' => $produto['descricao'] ?? null,
                         'caractrib' => $produto['caracTrib'] ?? null,
                         'atividade' => $produto['atividade'] ?? null,
@@ -212,9 +220,19 @@ class SyncGtinCommand extends Command
 
                         // Atualiza data da auditoria
                         'data_eauditoria' => now(),
+                        'erro_eauditoria' => null,
                     ]);
 
                 } catch (\Throwable $e) {
+                    try {
+                        DvpAuditoria::whereRaw("TRIM(LEADING '0' FROM codbarras) = ?", [$ean])->update([
+                            'erro_eauditoria' => $e->getMessage(),
+                            'data_eauditoria' => now(),
+                        ]);
+                    } catch (\Exception $e) {
+                        Log::error('Não foi possível registrar o erro na linha do GTIN ' . $ean . ': ' . $e->getMessage());
+                    }
+
                     Log::error("⚠️ Erro ao atualizar GTIN {$ean}: " . $e->getMessage());
                 }
             }
