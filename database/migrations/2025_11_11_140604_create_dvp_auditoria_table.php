@@ -98,13 +98,12 @@ return new class extends Migration
             $table->decimal('pdv_aliqpis', 10, 2)->nullable();
             $table->decimal('pdv_aliqcofins', 10, 2)->nullable();
 
-            $table->string('pis_ncm_srvc', 20)->nullable();
-            $table->string('pis_cest_srvc', 20)->nullable();
-            $table->integer('pis_cod_retorno_srvc')->nullable();
+            $table->string('pis_ncm_svrs', 20)->nullable();
+            $table->string('pis_cest_svrs', 20)->nullable();
+            $table->integer('pis_cod_retorno_svrs')->nullable();
 
-            $table->timestamp('data_insercao')->useCurrent();
-            $table->string('status_processo', 20)->nullable();
-            $table->string('origem', 20)->nullable();
+            $table->datetime('data_eauditoria')->nullable();
+            $table->datetime('data_svrs')->nullable();
             $table->timestamps();
         });
     }
