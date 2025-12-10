@@ -8,8 +8,8 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('dvp_auditoria', function (Blueprint $table) {
-            $table->varchar('ibs_anexo')->nullable()->after('ibs_reducaobc');
-            $table->varchar('cbs_anexo')->nullable()->after('cbs_reducaobc');
+            $table->string('ibs_anexo')->nullable()->after('ibs_reducaobc');
+            $table->string('cbs_anexo')->nullable()->after('cbs_reducaobc');
         });
     }
 
