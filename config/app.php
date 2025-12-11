@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -123,4 +123,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'app_google_recaptca_key' => env('APP_GOOGLE_RECAPTCA_KEY', ''),
+    'app_google_recaptca_secret' => env('APP_GOOGLE_RECAPTCA_SECRET', '')
 ];

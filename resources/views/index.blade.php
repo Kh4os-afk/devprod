@@ -30,6 +30,9 @@
 
     <!--====== Image Modal CSS ======-->
     <link rel="stylesheet" href="assets/css/image-modal.css">
+
+    <!--====== Google Recaptcha ======-->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -733,23 +736,50 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="single_form">
-                                        <input name="name" type="text" placeholder="Nome" required>
-                                    </div> <!-- single form -->
+                                        <input name="name" type="text" value="{{ old('name') }}" placeholder="Nome" @error('name') class="form-control is-invalid" @enderror required>
+                                        @error('name')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="single_form">
-                                        <input name="email" type="email" placeholder="Email" required>
-                                    </div> <!-- single form -->
+                                        <input name="email" type="email" value="{{ old('email') }}" placeholder="Email" @error('email') class="form-control is-invalid" @enderror required>
+                                        @error('email')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="single_form">
-                                        <textarea name="text" placeholder="Mensagem" required></textarea>
-                                    </div> <!-- single form -->
+                                        <textarea name="text" placeholder="Mensagem" value="{{ old('text') }}" @error('text') class="form-control is-invalid" @enderror required></textarea>
+                                        @error('text')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
                                 </div>
                                 <p class="form-message"></p>
                                 <div class="col-md-12">
                                     <div class="single_form">
-                                        <button class="main-btn" type="submit">Enviar</button>
+                                        <button id="btn-submit"
+                                                class="main-btn g-recaptcha"
+                                                data-sitekey="{{ config('app.app_google_recaptca_key') }}"
+                                                data-callback='onSubmit'
+                                                data-action='submit'
+                                                type="submit">
+
+                                            <span class="btn-text">Enviar</span>
+
+                                            <div class="d-flex justify-content-center">
+                                                <div class="spinner-border" role="status"></div>
+                                            </div>
+                                        </button>
                                     </div> <!-- single form -->
                                 </div>
                             </div> <!-- row -->
@@ -888,8 +918,8 @@
 
     var images = document.querySelectorAll('[id^="myImg"]');
 
-    images.forEach(function(img) {
-        img.onclick = function() {
+    images.forEach(function (img) {
+        img.onclick = function () {
             modal.style.display = "block";
             modalImg.src = this.src;
             modalImg.alt = this.alt;
@@ -899,9 +929,33 @@
 
     var span = document.getElementsByClassName("close")[0];
 
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
     };
+</script>
+
+{{-- Google Recaptcha --}}
+<script>
+    function onSubmit(token) {
+        document.getElementById("contact-form").submit();
+    }
+</script>
+
+{{-- Btn Disabled --}}
+<script>
+    function onSubmit(token) {
+        const btn = document.getElementById('btn-submit');
+        const text = btn.querySelector('.btn-text');
+
+        // desabilita o botão
+        btn.disabled = true;
+
+        // esconde APENAS o texto
+        text.style.display = 'none';
+
+        // envia o formulário
+        btn.closest('form').submit();
+    }
 </script>
 
 </body>
